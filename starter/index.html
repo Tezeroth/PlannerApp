@@ -22,7 +22,8 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
-    <div id="liveTime"></div>
+    <!-- <div id="currentDay"></div>
+    <div id="liveTime"></div> -->
 
   </head>
 
@@ -30,52 +31,53 @@
     <header>
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p id="currentDay"  style="font-weight: bolder; font-size: 5vh;"              class="lead"></p>
+      <p id="liveTime" class="lead"></p>
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
       <div id ="nineAm" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">9AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" ><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="tenAm" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">10AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="elevenAm" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">11AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="twelvePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">12PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="onePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">1PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="twoPM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">2PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="threePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">3PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="fourPM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">4PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
       </div>
       <div id ="fivePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">time</div>
+        <div class="col-sm-1" style="background-color: aquamarine;">5PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1" style="background-color: red ">button thing</div>
     </div>
@@ -91,11 +93,19 @@
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
 
+
+const currentDate = new Date();
+const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const ukFormattedDate = currentDate.toLocaleDateString('en-GB', options);
+console.log(ukFormattedDate);
+
+
     // Format the time
     var formattedTime = hours + ":" + minutes + ":" + seconds;
 
     // Update the HTML element
     document.getElementById("liveTime").innerHTML = formattedTime;
+    document.getElementById("currentDay").innerHTML = ukFormattedDate;
   }
 
   // Update the time every second
