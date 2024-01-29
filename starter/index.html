@@ -37,56 +37,58 @@
     <div class="container">
       <!-- Timeblocks go here -->
       <div id ="nineAm" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">9AM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">9AM</div>
+        <div class="col-sm-10" style="background-color: gray;"><span class = "description">entry</span></div>
         <div class="col-sm-1" ><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="tenAm" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">10AM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">10AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="elevenAm" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">11AM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">11AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="twelvePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">12PM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">12PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="onePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">1PM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">1PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="twoPM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">2PM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">2PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="threePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">3PM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">3PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="fourPM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">4PM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">4PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
       </div>
       <div id ="fivePM" class="row">
-        <div class="col-sm-1" style="background-color: aquamarine;">5PM</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">5PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
-        <div class="col-sm-1" style="background-color: red ">button thing</div>
+        <div class="col-sm-1" style="background-color: red "><button class ="saveBtn">button text or icon</button></div>
     </div>
 
     </div>
     
 <script>
 
-  TODO: //center this underneath the header. acknowlege you are lazy and nicked this script from chatgpt.
+// tried doing a queryselect to change the background colour of the timeblock based on the time of day but it didn't work.
+
+// acknowlege you are lazy and nicked this script from chatgpt.
   function updateLiveTime() {
     var currentTime = new Date();
     var hours = currentTime.getHours();
