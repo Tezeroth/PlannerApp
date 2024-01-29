@@ -4,6 +4,33 @@ body {
   line-height: 1;
 }
 
+
+
+
+
+/* Save button styling and effects */
+.saveBtn {
+  border-left: 1px solid black;
+  border-right: #06aed5;
+  border-top: #06aed5;
+  border-bottom: #06aed5;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06aed5;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  color: black
+}
+
+
+
+
 textarea {
   background: transparent;
   border: none;
