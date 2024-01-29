@@ -99,9 +99,14 @@ const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
 const ukFormattedDate = currentDate.toLocaleDateString('en-GB', options);
 console.log(ukFormattedDate);
 
+ // Convert hours to 12-hour format
+ var ampm = hours >= 12 ? 'PM' : 'AM'; // how the cool kids do it fam #ternary ftw
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Handle midnight as 12 AM
 
     // Format the time
-    var formattedTime = hours + ":" + minutes + ":" + seconds;
+    var formattedTime = hours + ":" + minutes + ":" + seconds + " " + ampm;
+
 
     // Update the HTML element
     document.getElementById("liveTime").innerHTML = formattedTime;
