@@ -13,7 +13,12 @@ body {
 text-align: left;
 }
 
-
+#rowTime {
+  padding: 0;
+  margin: 0;
+  border-top: gray 3px solid;
+  text-align: end !important; 
+}
 
 /* Save button styling and effects */
 .saveBtn {
