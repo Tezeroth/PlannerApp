@@ -22,6 +22,8 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
+    <div id="liveTime"></div>
+
   </head>
 
   <body>
@@ -79,6 +81,29 @@
     </div>
 
     </div>
+    
+<script>
+
+  TODO: //center this underneath the header. acknowlege you are lazy and nicked this script from chatgpt.
+  function updateLiveTime() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+    // Format the time
+    var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+    // Update the HTML element
+    document.getElementById("liveTime").innerHTML = formattedTime;
+  }
+
+  // Update the time every second
+  setInterval(updateLiveTime, 1000);
+
+  // Initial call to set the time immediately
+  updateLiveTime();
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </body>
