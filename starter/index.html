@@ -126,7 +126,12 @@
 
       // Assign appropriate background color based on current time
       //past
-      if (rowHour < hours || (rowHour !== hours && rowAMPM === 'AM')) {
+      if ((rowHour < hours && rowAMPM === 'AM') || (rowHour === 12 && ampm === 'PM' && rowHour >= hours) || (rowHour === hours && rowAMPM === 'AM')) {
+        row.querySelector(".col-sm-10").style.backgroundColor = "gray";
+      // I nailed chat gpt for that and code lens for that, that was ridicoulous.
+
+
+      }  else if (rowHour < hours || (rowHour !==hours && rowAMPM === 'AM')) {
         row.querySelector(".col-sm-10").style.backgroundColor = "gray";
       } else if (rowHour === hours && rowAMPM === ampm) {
         row.querySelector(".col-sm-10").style.backgroundColor = "red";
@@ -134,7 +139,10 @@
       } else {
         row.querySelector(".col-sm-10").style.backgroundColor = "green";
       }
+
+      
       console.log(rowTime, rowHour, rowAMPM)
+      // SORT OUT THE LOGIC
     }
   }
     // Update the time every second
