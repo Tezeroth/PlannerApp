@@ -125,13 +125,16 @@
       var rowAMPM = rowTime.slice(-2);
 
       // Assign appropriate background color based on current time
+      //past
       if (rowHour < hours || (rowHour !== hours && rowAMPM === 'AM')) {
         row.querySelector(".col-sm-10").style.backgroundColor = "gray";
       } else if (rowHour === hours && rowAMPM === ampm) {
         row.querySelector(".col-sm-10").style.backgroundColor = "red";
+      
       } else {
         row.querySelector(".col-sm-10").style.backgroundColor = "green";
       }
+      console.log(rowTime, rowHour, rowAMPM)
     }
   }
     // Update the time every second
