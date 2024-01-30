@@ -8,7 +8,7 @@ SO THAT I can manage my time effectively
 
 Acceptance Criteria
 
-
+#For this challenge, we had to complete the following tasks:
 
     Display the current day at the top of the calendar when a user opens the planner. - done
 
@@ -20,4 +20,6 @@ Acceptance Criteria
 
     Save the event in local storage when the save button is clicked in that timeblock. - will comeback to it
 
-    Persist events between refreshes of a page.
+    Persist events between refreshes of a page. - will have to come back to it
+
+    https://tezeroth.github.io/PlannerApp/
