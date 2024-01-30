@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link 
@@ -26,7 +26,6 @@
     <div id="liveTime"></div> -->
 
   </head>
-
   <body>
     <header>
       <h1 class="display-3">Work Day Scheduler</h1>
@@ -81,16 +80,21 @@
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
     </div>
-
+<!--ok so always read W3C documentation when looking for icons. need to install npm or something for bootstrap icons-->
     </div>
     
 <script>
 
-// tried doing a queryselect to change the background colour of the timeblock based on the time of day but it didn't work.
+// BACK TO THE DRAWING BOARD YOU NEED TO IMPORT SOMETHING CALLED DAY.JS
+// STOP OVERWRITING YOUR README FILE
 
+
+
+
+// ok so you need to use dayjs to get the current date and time.
 // acknowlege you are lazy and nicked this script from chatgpt.
   function updateLiveTime() {
-    var currentTime = new Date();
+    var currentTime = new Date(); // Corrected assignment
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
@@ -113,13 +117,30 @@ console.log(ukFormattedDate);
     // Update the HTML element
     document.getElementById("liveTime").innerHTML = formattedTime;
     document.getElementById("currentDay").innerHTML = ukFormattedDate;
+
+   
+
+
+
+
+
   }
+
+
+
+
+
 
   // Update the time every second
   setInterval(updateLiveTime, 1000);
 
   // Initial call to set the time immediately
   updateLiveTime();
+
+
+
+
+
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
