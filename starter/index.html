@@ -39,54 +39,55 @@
     <div class="container">
       <!-- Timeblocks go here -->
       <div id ="nine9Am" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">9AM</div>
-        <div class="col-sm-10" style="background-color: gray;"><span class = "description">entry</span></div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align:center; padding: 4vh;">9AM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1" ><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="ten10Am" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">10AM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">10AM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="eleven11Am" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">11AM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">11AM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="twelve12PM" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">12PM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">12PM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="one1PM" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">1PM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">1PM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="two2PM" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">2PM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">2PM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="three3PM" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">3PM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">3PM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="four4PM" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">4PM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">4PM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
       <div id ="five5PM" class="row">
-        <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">5PM</div>
-        <div class="col-sm-10" style="background-color: gray;">entry</div>
+        <div class="col-sm-1" id = "rowTime" style="background-color: white; text-align: center; padding: 4vh;">5PM</div>
+        <div class="col-sm-10"><input type="text" class="form-control userInput" value="entry"style="background-color: inherit;"></div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
     </div>
 <!--ok so always read W3C documentation when looking for icons. need to install npm or something for bootstrap icons-->
     </div>
     
 <script>
+
   
 
 
@@ -110,7 +111,7 @@
     hours = hours ? hours : 12;
 
     // Format the time
-    var formattedTime = hours + ":" + minutes + ":" + seconds + " " + ampm;
+    var formattedTime = hours + ":" + minutes.toString().padStart(2, '0') + ":" + seconds + " " + ampm;
 
     // Update the HTML element
     document.getElementById("liveTime").innerHTML = formattedTime;
@@ -122,7 +123,7 @@
       var row = rows[i];
       var rowTime = row.querySelector("#rowTime").textContent;
       var rowHour = parseInt(rowTime);
-      var rowAMPM = rowTime.slice(-2);
+      var rowAMPM = rowTime.slice(-2); //extracts the last two characters of the rowTime string
 
       // Assign appropriate background color based on current time
       //past
@@ -142,7 +143,7 @@
 
       
       console.log(rowTime, rowHour, rowAMPM)
-      // SORT OUT THE LOGIC
+      // SORTED OUT THE LOGIC
     }
   }
     // Update the time every second

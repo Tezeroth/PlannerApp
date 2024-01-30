@@ -7,6 +7,14 @@ body {
   line-height: 1;
 }
 
+.form-control {background-color: inherit;
+color: cornsilk;
+
+border-style: none;
+align-items: center;
+text-align: left;}
+
+
 .col-sm-1 {padding: 0;}
 
 
@@ -14,6 +22,8 @@ body {
   padding: 4vh;
   color: black;
 text-align: left;
+border-bottom: #ffffff;
+z-index: 10000;
 }
 
 #rowTime {
