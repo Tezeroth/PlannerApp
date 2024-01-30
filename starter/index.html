@@ -24,7 +24,10 @@
     <title>Work Day Scheduler</title>
     <!-- <div id="currentDay"></div>
     <div id="liveTime"></div> -->
-
+    <!-- <script src="path/to/dayjs/dayjs.min.js"></script> -->
+    <script>
+      // dayjs().format()
+    </script>
   </head>
   <body>
     <header>
@@ -35,47 +38,47 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div id ="nineAm" class="row">
+      <div id ="nine9Am" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">9AM</div>
         <div class="col-sm-10" style="background-color: gray;"><span class = "description">entry</span></div>
         <div class="col-sm-1" ><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="tenAm" class="row">
+      <div id ="ten10Am" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">10AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="elevenAm" class="row">
+      <div id ="eleven11Am" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">11AM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="twelvePM" class="row">
+      <div id ="twelve12PM" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">12PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="onePM" class="row">
+      <div id ="one1PM" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">1PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="twoPM" class="row">
+      <div id ="two2PM" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">2PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="threePM" class="row">
+      <div id ="three3PM" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">3PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="fourPM" class="row">
+      <div id ="four4PM" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">4PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
       </div>
-      <div id ="fivePM" class="row">
+      <div id ="five5PM" class="row">
         <div class="col-sm-1" id = "rowTime" style="background-color: aquamarine; text-align: center; padding: 4vh;">5PM</div>
         <div class="col-sm-10" style="background-color: gray;">entry</div>
         <div class="col-sm-1"><button class ="saveBtn"><i class="fas fa-save"></i></button></div>
@@ -84,61 +87,65 @@
     </div>
     
 <script>
-
-// BACK TO THE DRAWING BOARD YOU NEED TO IMPORT SOMETHING CALLED DAY.JS
-// STOP OVERWRITING YOUR README FILE
+  
 
 
 
+  updateLiveTime();
 
-// ok so you need to use dayjs to get the current date and time.
-// acknowlege you are lazy and nicked this script from chatgpt.
   function updateLiveTime() {
-    var currentTime = new Date(); // Corrected assignment
+    var currentTime = new Date();
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
 
+    const currentDate = new Date();
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const ukFormattedDate = currentDate.toLocaleDateString('en-GB', options);
+    console.log(ukFormattedDate);
 
-const currentDate = new Date();
-const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-const ukFormattedDate = currentDate.toLocaleDateString('en-GB', options);
-console.log(ukFormattedDate);
-
- // Convert hours to 12-hour format
- var ampm = hours >= 12 ? 'PM' : 'AM'; // how the cool kids do it fam #ternary ftw
+    // Convert hours to 12-hour format
+    var ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours ? hours : 12; // Handle midnight as 12 AM
+    hours = hours ? hours : 12;
 
     // Format the time
     var formattedTime = hours + ":" + minutes + ":" + seconds + " " + ampm;
-
 
     // Update the HTML element
     document.getElementById("liveTime").innerHTML = formattedTime;
     document.getElementById("currentDay").innerHTML = ukFormattedDate;
 
-   
+    // Iterate through rows
+    var rows = document.getElementsByClassName("row");
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var rowTime = row.querySelector("#rowTime").textContent;
+      var rowHour = parseInt(rowTime);
+      var rowAMPM = rowTime.slice(-2);
 
-
-
-
-
+      // Assign appropriate background color based on current time
+      if (rowHour < hours || (rowHour !== hours && rowAMPM === 'AM')) {
+        row.querySelector(".col-sm-10").style.backgroundColor = "gray";
+      } else if (rowHour === hours && rowAMPM === ampm) {
+        row.querySelector(".col-sm-10").style.backgroundColor = "red";
+      } else {
+        row.querySelector(".col-sm-10").style.backgroundColor = "green";
+      }
+    }
   }
+    // Update the time every second
+    setInterval(updateLiveTime, 1000);
+
+// Initial call to set the time immediately
+updateLiveTime();
+</script>
 
 
-
-
-
-
-  // Update the time every second
-  setInterval(updateLiveTime, 1000);
-
-  // Initial call to set the time immediately
-  updateLiveTime();
-
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</body>
+</html>
 
 
 </script>
